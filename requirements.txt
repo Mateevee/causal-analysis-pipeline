@@ -1,0 +1,28 @@
+# Tested with Python 3.12 on Windows 11.
+# Versions are the ones the paper's results were produced with.
+
+# --- Core (the pipeline and the validation) ---------------------------------
+numpy==2.0.0
+pandas==2.3.3
+scipy==1.16.0
+scikit-learn==1.8.0
+statsmodels==0.14.6
+joblib==1.4.2
+
+# --- Baselines and benchmark generators -------------------------------------
+tigramite==5.2.10.1    # PCMCI, PCMCI+, GPDC; also generates the tigramite SCM scenarios
+dcor==0.7              # used by tigramite's GPDC test (main_gpdc.py)
+lingam==1.12.2         # VARLiNGAM
+pgmpy==1.0.0           # ALARM benchmark (Data/alarm.py)
+torch==2.11.0          # CUTS+; also converts the DREAM3 .pt files once
+                       # (CPU build is enough; see https://pytorch.org for others)
+
+# --- Paper generators (generators/) -----------------------------------------
+matplotlib==3.9.2   # figures of the paper
+
+# --- Optional ----------------------------------------------------------------
+# Only needed by loaders that no entry point uses by default. Uncomment if
+# you use them.
+# causalchamber==0.2.8 # alternative way to download the Causal Chambers data
+# openpyxl==3.1.5      # Data/nino_barents_kara.py
+# networkx==3.6.1      # Data/causal_rivers.py
