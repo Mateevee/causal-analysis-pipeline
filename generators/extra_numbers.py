@@ -372,7 +372,7 @@ def supplement_table():
     L += _en_shortfall(rows, kept, "The five in the suite (28)")
     L += _en_shortfall(rows, [s for s in scens if s not in kept], "The eight outside the suite (30)")
     names = ", ".join(re.sub(r"^(benchmark_|real_)", "", s) for s in miss)
-    L += ["", f"*Notes. The pipeline returned an empty result on four scenarios of the complete run ({names}); they are scored "
+    L += ["", f"*Notes. The pipeline stopped with an error, returning no graph, on four scenarios of the complete run, each with two series ({names}); they are scored "
           "as F1 = 0 in parts (3) and (4). The five families in the suite were run again for parts (1) and (2); the pipeline's F1 "
           "differs from the complete run in the third decimal on two RCAEval cases. The eight families outside the suite are the "
           "BEELINE networks GSD and mCAD (Pratapa et al., 2020); CausalRivers, river discharge in Bavaria with the river network "

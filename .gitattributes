@@ -1,0 +1,10 @@
+# Line endings: git stores LF and checks out CRLF on every platform.
+# Some checks of the revision scripts hash the bytes on disk (CRLF):
+#   - revision/run_log.py: method_code_hash() hashes Pipeline/, ModelComparison/, Config/, Data/,
+#     Auxiliary/ and main.py; the scripts that run models compare it with the hash of the frozen
+#     method code (d0473069ebef1978);
+#   - revision/execution/r1_2c_third_party_benchmark.py (mode rodar) compares five files with the
+#     SHA-256 recorded in revision/FROZEN_third_party.json.
+# Those hashes were computed on the Portuguese originals; in this translated release the checks
+# print a warning instead of stopping (revision/README.md, Notes).
+* text=auto eol=crlf

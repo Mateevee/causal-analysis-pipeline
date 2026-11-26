@@ -134,6 +134,9 @@ def run_pipeline(
     evidence_coherence_guard: bool = False,
     evidence_coherence_min_rho: float = 0.3,
     evidence_coherence_alpha: float = 0.05,
+    # Regime when the rho interval is above 0 but below min_rho ('incoherent',
+    # default, original rule; 'coherent' = variant G1, see coherence.py).
+    evidence_coherence_overlap: str = 'incoherent',
     # What the incoherent regime falls back to. 'stage6' (default): every
     # pair with a significant Stage 6 effect is kept. 'auto': the same, EXCEPT when the past explains little
     # of the series (median out-of-sample R2 <= contemporaneous_max_past_r2,
@@ -214,6 +217,10 @@ def run_pipeline(
     # Drop every lagged edge when the data has no genuine time axis
     # (discovery._detect_time_axis). Off by default.
     lagged_requires_time_axis: bool = False,
+    # Rule that decides whether the data has a time axis, used here and by
+    # rescue_correct_lag_multiplicity='auto' (discovery._detect_time_axis):
+    # 'median_acf1' (default, original rule) or 'block_portmanteau'.
+    time_axis_rule: str = 'median_acf1',
     # ── Stage 8b: contemporaneous completion (lag-0 links) ───────────
     # See Pipeline/contemporaneous.py. Off by default.
     contemporaneous_links: bool = False,
@@ -373,6 +380,7 @@ def _stage3to5_prefilter(run: _Run) -> None:
         correct_lag_multiplicity=p['correct_lag_multiplicity'],
         n_perms_lag_correction=p['n_perms_lag_correction'],
         correct_lag_multiplicity_rescue=p['rescue_correct_lag_multiplicity'],
+        time_axis_rule=p['time_axis_rule'],
     )
     run.counts['3-5_prefilter_confirmed'] = len(run.candidates)
     if not run.candidates:
@@ -414,6 +422,7 @@ def _stage6_dml(run: _Run) -> None:
         run.coherence = coherence_mod.assess_evidence_coherence(
             run.results, min_rho=p['evidence_coherence_min_rho'],
             alpha=p['evidence_coherence_alpha'],
+            overlap=p['evidence_coherence_overlap'],
         )
         run.results['evidence_regime'] = run.coherence['regime']
         run.results['evidence_coherence_rho'] = run.coherence['rho']
@@ -560,7 +569,7 @@ def _stage8_regime_guards(run: _Run) -> None:
     # No genuine time axis: no lag is real, so 8b describes the whole graph.
     if p['lagged_requires_time_axis']:
         run.results, n_drop = contemp_mod.drop_lagged_without_time_axis(
-            run.results, run.processed)
+            run.results, run.processed, rule=p['time_axis_rule'])
         if n_drop is not None:
             run.counts['8b_no_time_axis_dropped'] = n_drop
             print(f"  [Stage 8] no time axis detected: {n_drop} lagged edges dropped")

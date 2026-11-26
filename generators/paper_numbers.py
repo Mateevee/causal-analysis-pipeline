@@ -400,7 +400,11 @@ def main():
             if k in g:
                 return v
         return g
-    fams = defaultdict(lambda: {"res": Counter(), "p": [], "b": []})
+    # Trivial floor of the scenario (Section IV-D): 2p / (1 + p), p = n_causal / n_universe.
+    def floor_of(mm):
+        p = mm[P]["n_causal"] / mm[P]["n_universe"]
+        return 2 * p / (1 + p)
+    fams = defaultdict(lambda: {"res": Counter(), "p": [], "b": [], "low": Counter()})
     for scen, mm in rows.items():
         cand = [F4(mm, m) for m, _ in BASELINES if m in mm]
         if P not in mm or not cand:
@@ -408,28 +412,44 @@ def main():
         f = fams[fam3(scen)]
         f["res"][cmp(F4(mm, P), max(cand))] += 1
         f["p"].append(F4(mm, P)); f["b"].append(max(cand))
+        # below the trivial floor: the pipeline, the best baseline, every method that ran
+        fl = floor_of(mm)
+        f["low"]["p"] += F4(mm, P) < fl - EPS
+        f["low"]["b"] += max(cand) < fl - EPS
+        f["low"]["all"] += max([F4(mm, P)] + cand) < fl - EPS
     order3 = ["VAR synthetic", "tigramite SCM", "Lorenz-96", "Coupled logistic maps", "CausalTime",
               "ALARM", "NetSim", "PetShop",
               "Tennessee Eastman", "Walker Circulation", "Sachs", "PeMS-BAY",
               "BEELINE", "DREAM3", "RCAEval", "EasyVista", "Causal Chambers"]
-    body, tot = [], Counter()
+    body, tot, tot_low = [], Counter(), Counter()
     for k in order3:
         if k in fams:
-            f = fams[k]; tot += f["res"]
+            f = fams[k]; tot += f["res"]; tot_low += f["low"]
             body.append([f"{k} ({len(f['p'])})", f"{f['res']['W']} / {f['res']['T']} / {f['res']['L']}",
                          f"{np.mean(f['p']):.3f} vs {np.mean(f['b']):.3f}",
-                         f"{max(0.0, max(b - a for a, b in zip(f['p'], f['b']))):.3f}"])
-    body.append([f"**Total ({sum(tot.values())})**", f"**{tot['W']} / {tot['T']} / {tot['L']}**", "", ""])
+                         f"{max(0.0, max(b - a for a, b in zip(f['p'], f['b']))):.3f}",
+                         f"{f['low']['p']} / {f['low']['b']}"])
+    body.append([f"**Total ({sum(tot.values())})**", f"**{tot['W']} / {tot['T']} / {tot['L']}**", "", "",
+                 f"{tot_low['p']} / {tot_low['b']}"])
     R.table(["Family (scenarios)", f"tau_max = {WINDOW}: W / T / L", "Mean F1, pipeline vs best baseline",
-             "Largest shortfall to the best baseline"], body)
+             "Largest shortfall to the best baseline", "Below the trivial floor, pipeline / best baseline"], body)
     for name, keep in [("development", lambda s: group_of(s) not in HELDOUT),
                        ("held-out", lambda s: group_of(s) in HELDOUT)]:
         a = [(F4(mm, P), max(F4(mm, m) for m, _ in BASELINES if m in mm)) for s, mm in rows.items()
              if keep(s) and P in mm]
         c = Counter(cmp(x, y) for x, y in a)
+        low = Counter()
+        for s, mm in rows.items():
+            if keep(s) and P in mm:
+                fl = floor_of(mm)
+                fs = [F4(mm, P)] + [F4(mm, m) for m, _ in BASELINES if m in mm]
+                low["p"] += fs[0] < fl - EPS
+                low["b"] += max(fs[1:]) < fl - EPS
+                low["all"] += max(fs) < fl - EPS
         R.p(f"- Subtotal {name} ({len(a)}): {c['W']} / {c['T']} / {c['L']}; mean F1 "
             f"{np.mean([x for x, _ in a]):.3f} vs {np.mean([y for _, y in a]):.3f}; largest shortfall to the best baseline "
-            f"{max(y - x for x, y in a):.3f}")
+            f"{max(y - x for x, y in a):.3f}; below the trivial floor: pipeline {low['p']}, best baseline "
+            f"{low['b']}, every method that ran {low['all']}")
     lo = Counter()
     for s, mm in rows.items():
         b = max(F4(mm, m) for m, _ in BASELINES if m in mm)

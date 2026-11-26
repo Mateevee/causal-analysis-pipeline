@@ -10,11 +10,14 @@ Motivation: the synthetic VAR generator
 (Data/synthetic_var.py) adds every causal relationship LINEARLY to the target
 series. That tests multi-stage detection and lag selection, but not the need
 for the DML's nonlinear nuisance models. The tigramite scenarios:
-  (a) were not designed by this pipeline's authors, so the generator and the
-      evaluated method are not co-designed;
+  (a) use tigramite's own generator, but the `links` dictionaries below
+      (the structural equations of every scenario) were written by this
+      pipeline's authors, following the library's examples; they are
+      therefore NOT third-party benchmarks, and the paper counts them in the
+      development suite, apart from its 12 third-party datasets;
   (b) include GENUINELY NONLINEAR dependencies (sign-preserving quadratic,
       threshold/step, tanh-type saturation), not just a linear lag;
-  (c) are PCMCI's own validation ground.
+  (c) use the generator with which PCMCI itself was validated.
 
 The generator is `structural_causal_process(links, T, seed)`, an additive
 noise process

@@ -108,10 +108,19 @@ Results_Sensitivity/
 Results_PCMCI_NoBH/
 Results_GrangerTE/
 Results_Seeds/
+Results_FPFixes/
+docs/
 
 *.csv
 .claude
 
-# Paper generators: local origins and outputs
+# Outputs of local studies, not versioned
+Results_Estudo/
+
+# Entries of the .gitignore of the public repository (causal-analysis-pipeline)
 generators/origins_local.py
 paper_outputs/
+
+# Outputs of the revision experiments (revision/), not versioned
+Results_Revisao/
+Results_CausalChamber/

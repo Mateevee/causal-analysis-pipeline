@@ -1,0 +1,807 @@
+{
+ "commit": "4d93403b002664fa55607f308ad0e80623472ded",
+ "fonte": "GitHub API, recursive git/trees, 2026-11-22",
+ "regra": "revision/PROTOCOL_third_party_benchmark_R1-2c.md, section 3.1",
+ "timegraph": [
+  {
+   "name": "timegraph_B2_00",
+   "variante": "B2",
+   "indice_na_variante": 0,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars4_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars4_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars4_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_01",
+   "variante": "B2",
+   "indice_na_variante": 2,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars4_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars4_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars4_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_02",
+   "variante": "B2",
+   "indice_na_variante": 3,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars6_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars6_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars6_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_03",
+   "variante": "B2",
+   "indice_na_variante": 7,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars8_lag3",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars8_lag3.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars8_lag3_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_04",
+   "variante": "B2",
+   "indice_na_variante": 8,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars8_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars8_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n1000_vars8_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_05",
+   "variante": "B2",
+   "indice_na_variante": 12,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars6_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars6_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars6_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_06",
+   "variante": "B2",
+   "indice_na_variante": 13,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars6_lag3",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars6_lag3.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars6_lag3_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_07",
+   "variante": "B2",
+   "indice_na_variante": 16,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars8_lag3",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars8_lag3.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars8_lag3_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_08",
+   "variante": "B2",
+   "indice_na_variante": 17,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars8_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars8_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n3000_vars8_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_09",
+   "variante": "B2",
+   "indice_na_variante": 20,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars4_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars4_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars4_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_10",
+   "variante": "B2",
+   "indice_na_variante": 21,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_11",
+   "variante": "B2",
+   "indice_na_variante": 22,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag3",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag3.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag3_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_12",
+   "variante": "B2",
+   "indice_na_variante": 23,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars6_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_13",
+   "variante": "B2",
+   "indice_na_variante": 24,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars8_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars8_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n5000_vars8_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_14",
+   "variante": "B2",
+   "indice_na_variante": 27,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars4_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars4_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars4_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_15",
+   "variante": "B2",
+   "indice_na_variante": 30,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag2",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag2.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag2_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_16",
+   "variante": "B2",
+   "indice_na_variante": 31,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag3",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag3.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag3_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_17",
+   "variante": "B2",
+   "indice_na_variante": 32,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars6_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_18",
+   "variante": "B2",
+   "indice_na_variante": 34,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars8_lag3",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars8_lag3.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars8_lag3_structure.txt"
+  },
+  {
+   "name": "timegraph_B2_19",
+   "variante": "B2",
+   "indice_na_variante": 35,
+   "base": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars8_lag4",
+   "csv": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars8_lag4.csv",
+   "verdade": "Datasets/B2/gaussian_70_laplace_30/mixed_ts_n500_vars8_lag4_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_00",
+   "variante": "C2C",
+   "indice_na_variante": 0,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars4_lag2_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars4_lag2_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars4_lag2_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_01",
+   "variante": "C2C",
+   "indice_na_variante": 2,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars4_lag4_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars4_lag4_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars4_lag4_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_02",
+   "variante": "C2C",
+   "indice_na_variante": 3,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag2_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag2_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag2_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_03",
+   "variante": "C2C",
+   "indice_na_variante": 4,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag3_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag3_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag3_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_04",
+   "variante": "C2C",
+   "indice_na_variante": 5,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag4_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag4_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars6_lag4_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_05",
+   "variante": "C2C",
+   "indice_na_variante": 6,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars8_lag2_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars8_lag2_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n1000_vars8_lag2_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_06",
+   "variante": "C2C",
+   "indice_na_variante": 13,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n3000_vars6_lag3_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n3000_vars6_lag3_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n3000_vars6_lag3_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_07",
+   "variante": "C2C",
+   "indice_na_variante": 25,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n5000_vars8_lag3_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n5000_vars8_lag3_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n5000_vars8_lag3_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_08",
+   "variante": "C2C",
+   "indice_na_variante": 29,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars4_lag4_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars4_lag4_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars4_lag4_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_09",
+   "variante": "C2C",
+   "indice_na_variante": 30,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars6_lag2_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars6_lag2_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars6_lag2_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_10",
+   "variante": "C2C",
+   "indice_na_variante": 31,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars6_lag3_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars6_lag3_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars6_lag3_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_11",
+   "variante": "C2C",
+   "indice_na_variante": 33,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars8_lag2_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars8_lag2_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars8_lag2_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_12",
+   "variante": "C2C",
+   "indice_na_variante": 35,
+   "base": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars8_lag4_gaussian",
+   "csv": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars8_lag4_gaussian.csv",
+   "verdade": "Datasets/C2C/Gaussian/nonlinear_ts_n500_vars8_lag4_gaussian_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_13",
+   "variante": "C2C",
+   "indice_na_variante": 44,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n1000_vars8_lag4_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n1000_vars8_lag4_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n1000_vars8_lag4_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_14",
+   "variante": "C2C",
+   "indice_na_variante": 45,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars4_lag2_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars4_lag2_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars4_lag2_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_15",
+   "variante": "C2C",
+   "indice_na_variante": 48,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars6_lag2_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars6_lag2_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars6_lag2_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_16",
+   "variante": "C2C",
+   "indice_na_variante": 50,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars6_lag4_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars6_lag4_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n3000_vars6_lag4_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_17",
+   "variante": "C2C",
+   "indice_na_variante": 58,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars6_lag3_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars6_lag3_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars6_lag3_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_18",
+   "variante": "C2C",
+   "indice_na_variante": 59,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars6_lag4_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars6_lag4_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars6_lag4_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_C2C_19",
+   "variante": "C2C",
+   "indice_na_variante": 60,
+   "base": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars8_lag2_student_t",
+   "csv": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars8_lag2_student_t.csv",
+   "verdade": "Datasets/C2C/Students t/nonlinear_ts_n5000_vars8_lag2_student_t_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_00",
+   "variante": "D2C",
+   "indice_na_variante": 25,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_gaussian_block20",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_gaussian_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_gaussian_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_01",
+   "variante": "D2C",
+   "indice_na_variante": 28,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_student_t_block20",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_02",
+   "variante": "D2C",
+   "indice_na_variante": 29,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_student_t_block30",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_student_t_block30_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars6_lag2_student_t_block30_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_03",
+   "variante": "D2C",
+   "indice_na_variante": 31,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars8_lag2_gaussian_block20",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars8_lag2_gaussian_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n3000_vars8_lag2_gaussian_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_04",
+   "variante": "D2C",
+   "indice_na_variante": 38,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars4_lag2_gaussian_block30",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars4_lag2_gaussian_block30_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars4_lag2_gaussian_block30_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_05",
+   "variante": "D2C",
+   "indice_na_variante": 42,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars6_lag2_gaussian_block10",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars6_lag2_gaussian_block10_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars6_lag2_gaussian_block10_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_06",
+   "variante": "D2C",
+   "indice_na_variante": 51,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars8_lag2_student_t_block10",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars8_lag2_student_t_block10_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n5000_vars8_lag2_student_t_block10_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_07",
+   "variante": "D2C",
+   "indice_na_variante": 70,
+   "base": "Datasets/D2C/lag 2/nonlinear_ts_n500_vars8_lag2_student_t_block20",
+   "csv": "Datasets/D2C/lag 2/nonlinear_ts_n500_vars8_lag2_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 2/nonlinear_ts_n500_vars8_lag2_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_08",
+   "variante": "D2C",
+   "indice_na_variante": 88,
+   "base": "Datasets/D2C/lag 3/nonlinear_ts_n1000_vars8_lag3_student_t_block20",
+   "csv": "Datasets/D2C/lag 3/nonlinear_ts_n1000_vars8_lag3_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 3/nonlinear_ts_n1000_vars8_lag3_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_09",
+   "variante": "D2C",
+   "indice_na_variante": 107,
+   "base": "Datasets/D2C/lag 3/nonlinear_ts_n3000_vars8_lag3_student_t_block30",
+   "csv": "Datasets/D2C/lag 3/nonlinear_ts_n3000_vars8_lag3_student_t_block30_missing.csv",
+   "verdade": "Datasets/D2C/lag 3/nonlinear_ts_n3000_vars8_lag3_student_t_block30_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_10",
+   "variante": "D2C",
+   "indice_na_variante": 118,
+   "base": "Datasets/D2C/lag 3/nonlinear_ts_n5000_vars6_lag3_student_t_block20",
+   "csv": "Datasets/D2C/lag 3/nonlinear_ts_n5000_vars6_lag3_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 3/nonlinear_ts_n5000_vars6_lag3_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_11",
+   "variante": "D2C",
+   "indice_na_variante": 129,
+   "base": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars4_lag3_student_t_block10",
+   "csv": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars4_lag3_student_t_block10_missing.csv",
+   "verdade": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars4_lag3_student_t_block10_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_12",
+   "variante": "D2C",
+   "indice_na_variante": 135,
+   "base": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars6_lag3_student_t_block10",
+   "csv": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars6_lag3_student_t_block10_missing.csv",
+   "verdade": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars6_lag3_student_t_block10_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_13",
+   "variante": "D2C",
+   "indice_na_variante": 143,
+   "base": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars8_lag3_student_t_block30",
+   "csv": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars8_lag3_student_t_block30_missing.csv",
+   "verdade": "Datasets/D2C/lag 3/nonlinear_ts_n500_vars8_lag3_student_t_block30_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_14",
+   "variante": "D2C",
+   "indice_na_variante": 148,
+   "base": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars4_lag4_student_t_block20",
+   "csv": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars4_lag4_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars4_lag4_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_15",
+   "variante": "D2C",
+   "indice_na_variante": 154,
+   "base": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars6_lag4_student_t_block20",
+   "csv": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars6_lag4_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars6_lag4_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_16",
+   "variante": "D2C",
+   "indice_na_variante": 158,
+   "base": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars8_lag4_gaussian_block30",
+   "csv": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars8_lag4_gaussian_block30_missing.csv",
+   "verdade": "Datasets/D2C/lag 4/nonlinear_ts_n1000_vars8_lag4_gaussian_block30_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_17",
+   "variante": "D2C",
+   "indice_na_variante": 166,
+   "base": "Datasets/D2C/lag 4/nonlinear_ts_n3000_vars4_lag4_student_t_block20",
+   "csv": "Datasets/D2C/lag 4/nonlinear_ts_n3000_vars4_lag4_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 4/nonlinear_ts_n3000_vars4_lag4_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_18",
+   "variante": "D2C",
+   "indice_na_variante": 190,
+   "base": "Datasets/D2C/lag 4/nonlinear_ts_n5000_vars6_lag4_student_t_block20",
+   "csv": "Datasets/D2C/lag 4/nonlinear_ts_n5000_vars6_lag4_student_t_block20_missing.csv",
+   "verdade": "Datasets/D2C/lag 4/nonlinear_ts_n5000_vars6_lag4_student_t_block20_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D2C_19",
+   "variante": "D2C",
+   "indice_na_variante": 192,
+   "base": "Datasets/D2C/lag 4/nonlinear_ts_n5000_vars8_lag4_gaussian_block10",
+   "csv": "Datasets/D2C/lag 4/nonlinear_ts_n5000_vars8_lag4_gaussian_block10_missing.csv",
+   "verdade": "Datasets/D2C/lag 4/nonlinear_ts_n5000_vars8_lag4_gaussian_block10_causal_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_00",
+   "variante": "D3",
+   "indice_na_variante": 4,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n1000_vars4_lag2_noise50_mcar10_block10",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n1000_vars4_lag2_noise50_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n1000_vars4_lag2_noise50_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_01",
+   "variante": "D3",
+   "indice_na_variante": 15,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n1000_vars6_lag2_noise30_mcar5_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n1000_vars6_lag2_noise30_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n1000_vars6_lag2_noise30_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_02",
+   "variante": "D3",
+   "indice_na_variante": 53,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n3000_vars6_lag2_noise50_mcar10_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n3000_vars6_lag2_noise50_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n3000_vars6_lag2_noise50_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_03",
+   "variante": "D3",
+   "indice_na_variante": 71,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n3000_vars8_lag2_noise70_mcar5_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n3000_vars8_lag2_noise70_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n3000_vars8_lag2_noise70_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_04",
+   "variante": "D3",
+   "indice_na_variante": 73,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars4_lag2_noise30_mcar10_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars4_lag2_noise30_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars4_lag2_noise30_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_05",
+   "variante": "D3",
+   "indice_na_variante": 84,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars6_lag2_noise30_mcar10_block10",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars6_lag2_noise30_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars6_lag2_noise30_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_06",
+   "variante": "D3",
+   "indice_na_variante": 97,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars8_lag2_noise30_mcar10_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars8_lag2_noise30_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n5000_vars8_lag2_noise30_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_07",
+   "variante": "D3",
+   "indice_na_variante": 111,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n500_vars4_lag2_noise30_mcar5_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n500_vars4_lag2_noise30_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n500_vars4_lag2_noise30_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_08",
+   "variante": "D3",
+   "indice_na_variante": 129,
+   "base": "Datasets/D3/lag 2/nonlinear_ts_n500_vars6_lag2_noise70_mcar10_block5",
+   "csv": "Datasets/D3/lag 2/nonlinear_ts_n500_vars6_lag2_noise70_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 2/nonlinear_ts_n500_vars6_lag2_noise70_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_09",
+   "variante": "D3",
+   "indice_na_variante": 146,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars4_lag3_noise30_mcar5_block10",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars4_lag3_noise30_mcar5_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars4_lag3_noise30_mcar5_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_10",
+   "variante": "D3",
+   "indice_na_variante": 162,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block10",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_11",
+   "variante": "D3",
+   "indice_na_variante": 163,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block5",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_12",
+   "variante": "D3",
+   "indice_na_variante": 176,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars8_lag3_noise70_mcar10_block10",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars8_lag3_noise70_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n1000_vars8_lag3_noise70_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_13",
+   "variante": "D3",
+   "indice_na_variante": 213,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n3000_vars8_lag3_noise70_mcar10_block5",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n3000_vars8_lag3_noise70_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n3000_vars8_lag3_noise70_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_14",
+   "variante": "D3",
+   "indice_na_variante": 221,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n5000_vars4_lag3_noise50_mcar10_block5",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n5000_vars4_lag3_noise50_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n5000_vars4_lag3_noise50_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_15",
+   "variante": "D3",
+   "indice_na_variante": 268,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n500_vars6_lag3_noise50_mcar10_block10",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n500_vars6_lag3_noise50_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n500_vars6_lag3_noise50_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_16",
+   "variante": "D3",
+   "indice_na_variante": 287,
+   "base": "Datasets/D3/lag 3/nonlinear_ts_n500_vars8_lag3_noise70_mcar5_block5",
+   "csv": "Datasets/D3/lag 3/nonlinear_ts_n500_vars8_lag3_noise70_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 3/nonlinear_ts_n500_vars8_lag3_noise70_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_17",
+   "variante": "D3",
+   "indice_na_variante": 335,
+   "base": "Datasets/D3/lag 4/nonlinear_ts_n3000_vars4_lag4_noise70_mcar5_block5",
+   "csv": "Datasets/D3/lag 4/nonlinear_ts_n3000_vars4_lag4_noise70_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 4/nonlinear_ts_n3000_vars4_lag4_noise70_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_18",
+   "variante": "D3",
+   "indice_na_variante": 336,
+   "base": "Datasets/D3/lag 4/nonlinear_ts_n3000_vars6_lag4_noise30_mcar10_block10",
+   "csv": "Datasets/D3/lag 4/nonlinear_ts_n3000_vars6_lag4_noise30_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3/lag 4/nonlinear_ts_n3000_vars6_lag4_noise30_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3_19",
+   "variante": "D3",
+   "indice_na_variante": 361,
+   "base": "Datasets/D3/lag 4/nonlinear_ts_n5000_vars4_lag4_noise30_mcar10_block5",
+   "csv": "Datasets/D3/lag 4/nonlinear_ts_n5000_vars4_lag4_noise30_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3/lag 4/nonlinear_ts_n5000_vars4_lag4_noise30_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_00",
+   "variante": "D3C",
+   "indice_na_variante": 9,
+   "base": "Datasets/D3C/lag 2/nonlinear_ts_n1000_vars4_lag2_noise70_mcar10_block5",
+   "csv": "Datasets/D3C/lag 2/nonlinear_ts_n1000_vars4_lag2_noise70_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 2/nonlinear_ts_n1000_vars4_lag2_noise70_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_01",
+   "variante": "D3C",
+   "indice_na_variante": 29,
+   "base": "Datasets/D3C/lag 2/nonlinear_ts_n1000_vars8_lag2_noise50_mcar10_block5",
+   "csv": "Datasets/D3C/lag 2/nonlinear_ts_n1000_vars8_lag2_noise50_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 2/nonlinear_ts_n1000_vars8_lag2_noise50_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_02",
+   "variante": "D3C",
+   "indice_na_variante": 72,
+   "base": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars4_lag2_noise30_mcar10_block10",
+   "csv": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars4_lag2_noise30_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars4_lag2_noise30_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_03",
+   "variante": "D3C",
+   "indice_na_variante": 88,
+   "base": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars6_lag2_noise50_mcar10_block10",
+   "csv": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars6_lag2_noise50_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars6_lag2_noise50_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_04",
+   "variante": "D3C",
+   "indice_na_variante": 96,
+   "base": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars8_lag2_noise30_mcar10_block10",
+   "csv": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars8_lag2_noise30_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 2/nonlinear_ts_n5000_vars8_lag2_noise30_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_05",
+   "variante": "D3C",
+   "indice_na_variante": 133,
+   "base": "Datasets/D3C/lag 2/nonlinear_ts_n500_vars8_lag2_noise30_mcar10_block5",
+   "csv": "Datasets/D3C/lag 2/nonlinear_ts_n500_vars8_lag2_noise30_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 2/nonlinear_ts_n500_vars8_lag2_noise30_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_06",
+   "variante": "D3C",
+   "indice_na_variante": 157,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n1000_vars6_lag3_noise30_mcar10_block5",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n1000_vars6_lag3_noise30_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n1000_vars6_lag3_noise30_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_07",
+   "variante": "D3C",
+   "indice_na_variante": 162,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n1000_vars6_lag3_noise50_mcar5_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_08",
+   "variante": "D3C",
+   "indice_na_variante": 186,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars4_lag3_noise50_mcar5_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars4_lag3_noise50_mcar5_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars4_lag3_noise50_mcar5_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_09",
+   "variante": "D3C",
+   "indice_na_variante": 194,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars6_lag3_noise30_mcar5_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars6_lag3_noise30_mcar5_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars6_lag3_noise30_mcar5_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_10",
+   "variante": "D3C",
+   "indice_na_variante": 204,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar10_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_11",
+   "variante": "D3C",
+   "indice_na_variante": 205,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar10_block5",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_12",
+   "variante": "D3C",
+   "indice_na_variante": 207,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar5_block5",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise30_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_13",
+   "variante": "D3C",
+   "indice_na_variante": 209,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise50_mcar10_block5",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise50_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n3000_vars8_lag3_noise50_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_14",
+   "variante": "D3C",
+   "indice_na_variante": 244,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n5000_vars8_lag3_noise50_mcar10_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n5000_vars8_lag3_noise50_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n5000_vars8_lag3_noise50_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_15",
+   "variante": "D3C",
+   "indice_na_variante": 248,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n5000_vars8_lag3_noise70_mcar10_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n5000_vars8_lag3_noise70_mcar10_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n5000_vars8_lag3_noise70_mcar10_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_16",
+   "variante": "D3C",
+   "indice_na_variante": 282,
+   "base": "Datasets/D3C/lag 3/nonlinear_ts_n500_vars8_lag3_noise50_mcar5_block10",
+   "csv": "Datasets/D3C/lag 3/nonlinear_ts_n500_vars8_lag3_noise50_mcar5_block10_missing.csv",
+   "verdade": "Datasets/D3C/lag 3/nonlinear_ts_n500_vars8_lag3_noise50_mcar5_block10_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_17",
+   "variante": "D3C",
+   "indice_na_variante": 303,
+   "base": "Datasets/D3C/lag 4/nonlinear_ts_n1000_vars6_lag4_noise30_mcar5_block5",
+   "csv": "Datasets/D3C/lag 4/nonlinear_ts_n1000_vars6_lag4_noise30_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 4/nonlinear_ts_n1000_vars6_lag4_noise30_mcar5_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_18",
+   "variante": "D3C",
+   "indice_na_variante": 365,
+   "base": "Datasets/D3C/lag 4/nonlinear_ts_n5000_vars4_lag4_noise50_mcar10_block5",
+   "csv": "Datasets/D3C/lag 4/nonlinear_ts_n5000_vars4_lag4_noise50_mcar10_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 4/nonlinear_ts_n5000_vars4_lag4_noise50_mcar10_block5_structure.txt"
+  },
+  {
+   "name": "timegraph_D3C_19",
+   "variante": "D3C",
+   "indice_na_variante": 371,
+   "base": "Datasets/D3C/lag 4/nonlinear_ts_n5000_vars4_lag4_noise70_mcar5_block5",
+   "csv": "Datasets/D3C/lag 4/nonlinear_ts_n5000_vars4_lag4_noise70_mcar5_block5_missing.csv",
+   "verdade": "Datasets/D3C/lag 4/nonlinear_ts_n5000_vars4_lag4_noise70_mcar5_block5_structure.txt"
+  }
+ ]
+}

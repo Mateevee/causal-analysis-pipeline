@@ -1,0 +1,390 @@
+{
+ "external_data/causal_chamber/lt_walks_v1/actuators_white.csv": {
+  "bytes": 5548528,
+  "sha256": "5f220699e4090fa6e723e5a369434b58647a84c179a12903e1f550f0a988c670"
+ },
+ "external_data/causal_chamber/lt_walks_v1/color_mix.csv": {
+  "bytes": 2346627,
+  "sha256": "b9088d72f079ce320d6958025c7930d124b2d89919bfa4aa8c618c84cf50846f"
+ },
+ "external_data/causal_chamber/lt_walks_v1/smooth_polarizers.csv": {
+  "bytes": 2757207,
+  "sha256": "0bb0c193c44d73e7ad51b2519daf5f112d4b57904434b9e89d03f63ff95cae1d"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_1.csv": {
+  "bytes": 347354,
+  "sha256": "3926ddaa3acf6cbf4e46e3ff7a99d239f7677d9029eb68c95f4e5547302e7a40"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_10.csv": {
+  "bytes": 3134998,
+  "sha256": "4e9630d13ddea8d481190b764e816523045550d8c73a4484d1cd9b04be548cae"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_11.csv": {
+  "bytes": 3131416,
+  "sha256": "061c8dee8a92b5f9c43ac5c93cddd293e04243c78880622f8d43e4c218b7294c"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_12.csv": {
+  "bytes": 3133787,
+  "sha256": "d0d43a3c54c76c573bc2559378faa072704a2692a2247efeeab1b01c08ce20af"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_13.csv": {
+  "bytes": 3134543,
+  "sha256": "78901a7fd0347406dfb216a7413c31bcc06690388eac83ae1a8612f088b8086e"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_14.csv": {
+  "bytes": 3137026,
+  "sha256": "2f841be2549b1586e253171c1b12cd5d38ebc4803e4a08f9888464f5faba1014"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_15.csv": {
+  "bytes": 3132187,
+  "sha256": "e8946b817621fce7d5106d6b99069340972f6edce54e736fe9481e6d4b68eaef"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_16.csv": {
+  "bytes": 3134262,
+  "sha256": "030ff9d09d11eb66cd775209dc0cbc77ed83f8910d2efbec7c2a64bda393802e"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_2.csv": {
+  "bytes": 3133899,
+  "sha256": "de9ddacd37582f9b8b3fe28c6d852c86ef891e4b87de48679a54f84b00326f9a"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_3.csv": {
+  "bytes": 3138557,
+  "sha256": "7a039b92188c78d906f9d8f0ab5646281c89d83a3e458f1661cdccd096dd2d3b"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_4.csv": {
+  "bytes": 3124779,
+  "sha256": "022c754017fa4ac831adf91a98fbd49d984086d7c21164ec2c5986bfd85e8c6b"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_5.csv": {
+  "bytes": 3134176,
+  "sha256": "f4e26667ef8650edbdb5bc9b182543527461d2e7bde03063ea7cf1e7bab45a37"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_6.csv": {
+  "bytes": 3131806,
+  "sha256": "7502f2acd9ed1b40d2039f17320d50a58d01b7d749d4c8298af7f5efa8bba18d"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_7.csv": {
+  "bytes": 3132145,
+  "sha256": "710c2d7ca785971f73e3c8777fefda85fcd241e3f0c771f05706204cfe46e8b9"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_8.csv": {
+  "bytes": 3128180,
+  "sha256": "cc38d03b6b7e0f53a9c4b46a1227d34979fda58a9db15137791e66b2c00c05e6"
+ },
+ "external_data/causal_chamber/wt_walks_v1/actuators_random_walk_9.csv": {
+  "bytes": 3131069,
+  "sha256": "750d9e25f3ef9c8b6eb2c6b1cc3743a10ffd4ac0dc3ab1c2141f2b66f17d4ea4"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_fast_run_1.csv": {
+  "bytes": 2919780,
+  "sha256": "5a934c96363c4c50ad7527df9bd15360e4d5e9c7b022f730c07d57b9f38f5366"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_fast_run_2.csv": {
+  "bytes": 2904103,
+  "sha256": "b461b23bb97fd84a5a7957e42ea702928d6c4ef52cbb2888b27dfb6f2bd0e961"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_fast_run_3.csv": {
+  "bytes": 2907867,
+  "sha256": "09158f23bd02e901c747389d18fb6969406295e51b2d140bef60d1d44dae549b"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_fast_run_4.csv": {
+  "bytes": 2908933,
+  "sha256": "dd3ba685297f1587b70e812a45d561fb4735dfbcdcd5925e2cf7b02d33b919b9"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_fast_run_5.csv": {
+  "bytes": 2918615,
+  "sha256": "e08425ce575204589d971168542b71543d910a2f174b01a520c65d9b05d797c0"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_slow_run_1.csv": {
+  "bytes": 2903217,
+  "sha256": "5232684108d53b4928dd67f8faba676e76f850388223eeaf04f70b557ce3cba4"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_slow_run_2.csv": {
+  "bytes": 2914380,
+  "sha256": "ca35cfa9892213b5cc5fa69d141d10ed7d26d189ce506f15220f1fdd7f92a834"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_slow_run_3.csv": {
+  "bytes": 2904216,
+  "sha256": "a3226f3006e9034f3e6dffbc6060d6918f8e1c1eb8956e8923af84b64aeca517"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_slow_run_4.csv": {
+  "bytes": 2905451,
+  "sha256": "31d5eea7b0eb48f32c8a92799e3c20d7a047d330f125a80d44b03b2946f65856"
+ },
+ "external_data/causal_chamber/wt_walks_v1/loads_hatch_mix_slow_run_5.csv": {
+  "bytes": 2909461,
+  "sha256": "7e4b8a00796631244d60c1a33fc0e8c56bf5149321d6c3207412359bcd505de1"
+ },
+ "external_data/causal_rivers/rivers_east_germany.p": {
+  "bytes": 107954,
+  "sha256": "d6ff7df27325be8e1a8b7194ee2d1dd915a29e253561e389db66338a6711ade3"
+ },
+ "external_data/causal_rivers/rivers_ts_east_germany.csv": {
+  "bytes": 618673429,
+  "sha256": "c0b2202df0c69eefd3174160d8d537aa4977452bd0545c77e3ef41052da8abc5"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Ecoli1.csv": {
+  "bytes": 2415966,
+  "sha256": "7c98cbf43b44a018cef1415cbbd1df56d71aae0249240fb2e189550255ac6e48"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Ecoli1.pt": {
+  "bytes": 386760,
+  "sha256": "c312c1a4d2570bfb0fbeae075868de9547f50efd70c2903697009586c5b70c97"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Ecoli2.csv": {
+  "bytes": 2415966,
+  "sha256": "d0d30e96de51a5e24376fb7998e124643cb1e68cc82e7d006f9373c830174187"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Ecoli2.pt": {
+  "bytes": 386760,
+  "sha256": "77d7cf39a0e78396f73922f3345b1650d99cd1445173c4bb87a2c86ee41e04a5"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Yeast1.csv": {
+  "bytes": 2415966,
+  "sha256": "08e6bc33b146632151da8e6fecf7e0164f90ee65a238fbab1d1f90899d4f37f2"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Yeast1.pt": {
+  "bytes": 386760,
+  "sha256": "94844418b42c262ca9f378e673f124ec982cd0b635260c200f56f886091b9d3b"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Yeast2.csv": {
+  "bytes": 2415966,
+  "sha256": "fffe038d721b83257685bbd4253d5d165c6c303c16faf196add9c86b55004dbd"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Yeast2.pt": {
+  "bytes": 386760,
+  "sha256": "29e81a6e98b6b190590eed911d7e13c8e68ada53eba668dca6cb5bec9973c9ec"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Yeast3.csv": {
+  "bytes": 2415966,
+  "sha256": "fb89bf06be9a12200a9cadfa36e95208820706c0677bf82b3dd246b1ed441d28"
+ },
+ "external_data/dream3/Dream3TensorData/Size100Yeast3.pt": {
+  "bytes": 386760,
+  "sha256": "ba509214bb86fa1d4a8160f95b0d384182aab38afed7545d47aaee09bc73d36b"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Ecoli1.csv": {
+  "bytes": 21084,
+  "sha256": "1e6f64f03c91ac683a461e093254a24d96de104eaca8c6a89d71debefa1d98dd"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Ecoli1.pt": {
+  "bytes": 3717,
+  "sha256": "3c16a65e355ef14811d2f8dbd4d69600bc927153d09370e0092913aeb091ceb6"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Ecoli2.csv": {
+  "bytes": 21084,
+  "sha256": "d42a57ae3d83f213b7f87bce76a68aa9809a55523571be34625a1bd66989139b"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Ecoli2.pt": {
+  "bytes": 3717,
+  "sha256": "5a8d100479157ecef624e9a3491998725157ca10b844eec136f8e52ba9dbb358"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Yeast1.csv": {
+  "bytes": 21084,
+  "sha256": "53337885ff74a7a427cf8a555bf3548a61a897aa3336ae46ee25a3f65d780703"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Yeast1.pt": {
+  "bytes": 3717,
+  "sha256": "c54b701226471df022f12cf8dcc1c3c2dd07bbf94a2c1ec6aa36d40d051cc923"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Yeast2.csv": {
+  "bytes": 21084,
+  "sha256": "8a8e09769f377ad95eeafb2b372e7c4e717afca9d3905ee4ef199578e537d07e"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Yeast2.pt": {
+  "bytes": 3717,
+  "sha256": "2fde12ddb67c07ba83e53a5191f8b7374a6ee4b5ca422271297c3149505beb69"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Yeast3.csv": {
+  "bytes": 21084,
+  "sha256": "90e3f55477a1189027035683c5f6f7cf9827e5c9f7d393845bf853d290473a28"
+ },
+ "external_data/dream3/Dream3TensorData/Size10Yeast3.pt": {
+  "bytes": 3717,
+  "sha256": "8a9ae0fd18596d87a6d518ff09bad4c9cdbddf485f76a46915918a4971c62c8a"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Ecoli1.csv": {
+  "bytes": 604233,
+  "sha256": "ef0125dfb5ff203708c1c5945103b6f0218900e9b244be3f63cfd304e8e4ece2"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Ecoli1.pt": {
+  "bytes": 96958,
+  "sha256": "8e53060345844a747012f09051e0240d28bbf462c5f23b40b54b0fe91c76020c"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Ecoli2.csv": {
+  "bytes": 604233,
+  "sha256": "4bfa740a7c76a2d6d396473ddb864074b11564773b5423fdbb215733af5bc783"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Ecoli2.pt": {
+  "bytes": 96958,
+  "sha256": "5ecf854d9f1c85b1d43a79a91c103a2387105dad52c7501990213fabec0c3c55"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Yeast1.csv": {
+  "bytes": 604233,
+  "sha256": "945bea4138ddcb0d69774c15d8a7d57cd1e9d463ca6ae66133cf737ec9a75ad6"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Yeast1.pt": {
+  "bytes": 96958,
+  "sha256": "ce153f15467e6ee3d66c188851505c998f6f67d2ca6fb94d09816549393f34d3"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Yeast2.csv": {
+  "bytes": 604233,
+  "sha256": "ba71411ff1b3d56f938a4fb1932e88e4d16879927f3686cf47b9228cfc7912d8"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Yeast2.pt": {
+  "bytes": 96958,
+  "sha256": "ddba628f2d5c4c77254f9d4dec226df30ea0da59174b9ee4892bd0d1312b5b0e"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Yeast3.csv": {
+  "bytes": 604233,
+  "sha256": "832c0ccd0a478fc1a159fe4038565d5885d4127b0e2ef680e341d19d26866606"
+ },
+ "external_data/dream3/Dream3TensorData/Size50Yeast3.pt": {
+  "bytes": 96958,
+  "sha256": "f67b799251d9b8249cf4bf47b226656ff1fc2740e78614360c04a6bc32044e4b"
+ },
+ "external_data/dream3/LICENSE_SRU_for_GCI": {
+  "bytes": 1071,
+  "sha256": "511faba576774e490fc9dfa467561afe5b0547e21725ab38f19569192c2e75dc"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize10-Ecoli1.tsv": {
+  "bytes": 89,
+  "sha256": "894c9f5077edc198c8e6fc5eb21b2b20dfbc9ba03a28514a7b357c55b91b971d"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize10-Ecoli2.tsv": {
+  "bytes": 121,
+  "sha256": "e7c559858749e06a71b1cca03c79286e6c3ff0aaf7a2cd1b9206bfa9246d39e6"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize10-Yeast1.tsv": {
+  "bytes": 81,
+  "sha256": "caa325b78cc44825e7e227094fdb4a192a0e4801dc8a384b668b188adeef01cb"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize10-Yeast2.tsv": {
+  "bytes": 206,
+  "sha256": "d004c0b82241fc50a6f820a61f037ae8a068f40998d8e4b19be7673cc7df97c6"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize10-Yeast3.tsv": {
+  "bytes": 179,
+  "sha256": "b9c70c4633532569f79cbc0fc879b453aa114fd1f73a4929de2dcc70012792bd"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize100-Ecoli1.tsv": {
+  "bytes": 1220,
+  "sha256": "a3ff157a8398f52a13dd26af8407817ec81c0ac8d4582ccb38534e384f68cd73"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize100-Ecoli2.tsv": {
+  "bytes": 1148,
+  "sha256": "f5448add4389180a105e2e75f730278cf2d946b6948823091569f386fe97fde1"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize100-Yeast1.tsv": {
+  "bytes": 1627,
+  "sha256": "00cebe38ad7a596c605dcc8db021f1b23e3ac309bc4f42775ef2490515212712"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize100-Yeast2.tsv": {
+  "bytes": 3796,
+  "sha256": "7320839722d86d161522f9343d80513a8ee94dda38ffad823b4e668ae467ccae"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize100-Yeast3.tsv": {
+  "bytes": 5490,
+  "sha256": "296e70fd0ee2aacb20b1079a8a070b0f633a421384b32f009011b75b0b75746d"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize50-Ecoli1.tsv": {
+  "bytes": 596,
+  "sha256": "27cdeaabeb31b11a9dc91c4dc00b02424e3463a2b3480ea318c803cd1a097d34"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize50-Ecoli2.tsv": {
+  "bytes": 759,
+  "sha256": "3edf712ab7c7a53dc1072f3ed3b18681c4b753c45fd17ac245ab8300bdd9e85d"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize50-Yeast1.tsv": {
+  "bytes": 745,
+  "sha256": "248d4bb084715e72eda8d5597a388c5967389ca4bb1b62e9fa4cb02a531459f6"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize50-Yeast2.tsv": {
+  "bytes": 1553,
+  "sha256": "7a83971157060ff18e949840d480fa5867a78bad1f15b2ee6fb79e3f78fe93a1"
+ },
+ "external_data/dream3/TrueGeneNetworks/InSilicoSize50-Yeast3.tsv": {
+  "bytes": 1669,
+  "sha256": "6c19f29ddcc91c6c33f6b6667e542b2c430fe35dca5ce85c720dc95e6ed6c289"
+ },
+ "external_data/dream4/insilico_size100_1_goldstandard.tsv": {
+  "bytes": 97416,
+  "sha256": "839ed6be71f52313fc35256892a5e4e38faf7df637ee91e67757b996a3f12e1e"
+ },
+ "external_data/dream4/insilico_size100_1_timeseries.tsv": {
+  "bytes": 211849,
+  "sha256": "d2701670f17e5ade34624c9252fbad4e799156ed4a055ddc97388c1aeddd6336"
+ },
+ "external_data/dream4/insilico_size100_2_goldstandard.tsv": {
+  "bytes": 97416,
+  "sha256": "5bdf23ce7c28c7f0c2316661632ea17d2c1b79295507cbf12fd4010000d2f3d9"
+ },
+ "external_data/dream4/insilico_size100_2_timeseries.tsv": {
+  "bytes": 211849,
+  "sha256": "5e738fc7ae6c45ff163aa81e66f8a765fa1562fc67464cfe204d326e4d05f87a"
+ },
+ "external_data/dream4/insilico_size100_3_goldstandard.tsv": {
+  "bytes": 97416,
+  "sha256": "2bc529512045cb4961c6856ba07855ae934aaff4bbb1c86f45aedfeef7d13fc4"
+ },
+ "external_data/dream4/insilico_size100_3_timeseries.tsv": {
+  "bytes": 211849,
+  "sha256": "4820581efddce33d9eb161a9d5c2d530d73e8d1aaeef96609eea6bb405769e18"
+ },
+ "external_data/dream4/insilico_size100_4_goldstandard.tsv": {
+  "bytes": 97416,
+  "sha256": "84e28bec273d1c4efe3d04b9e3678eda1848fb53616de90e811acac571ed34f5"
+ },
+ "external_data/dream4/insilico_size100_4_timeseries.tsv": {
+  "bytes": 211849,
+  "sha256": "392e44acca4a7af9fd16b3d57cdfd3b5f9b60c4c013508cf34496eb106b7f65e"
+ },
+ "external_data/dream4/insilico_size100_5_goldstandard.tsv": {
+  "bytes": 97416,
+  "sha256": "667909b9fe1b3a9933fb340da4da168d71d218473f7a5ec888249c7435985535"
+ },
+ "external_data/dream4/insilico_size100_5_timeseries.tsv": {
+  "bytes": 211849,
+  "sha256": "234c4b36cf55ff185d12d201a22286844b38a2ce494b72380e96b195f8e6150d"
+ },
+ "external_data/dream4/insilico_size10_1_goldstandard.tsv": {
+  "bytes": 738,
+  "sha256": "cf569f66794490eb68b50c85397dead8aa39d95899eafd75522b62b269565fd4"
+ },
+ "external_data/dream4/insilico_size10_1_timeseries.tsv": {
+  "bytes": 11183,
+  "sha256": "36a0a2d17cf5bae3b850fc52f81f955781a01b960e433f2f6498191d3c9bce3a"
+ },
+ "external_data/dream4/insilico_size10_2_goldstandard.tsv": {
+  "bytes": 738,
+  "sha256": "9eed1d9baf9bc9bdea17328ae0af5a65c5086288522d2e2fb928ac64c3d7c7f5"
+ },
+ "external_data/dream4/insilico_size10_2_timeseries.tsv": {
+  "bytes": 11183,
+  "sha256": "66cc07691892f6a834f19d178d4dcee4e03898979ef4c10cc6db9784f0d0992c"
+ },
+ "external_data/dream4/insilico_size10_3_goldstandard.tsv": {
+  "bytes": 738,
+  "sha256": "0f4c113f5f1d229a70fc5bb9d116cec651c1bdd98b511fc324d392ad58fdb2e2"
+ },
+ "external_data/dream4/insilico_size10_3_timeseries.tsv": {
+  "bytes": 11183,
+  "sha256": "919c2dae7b342fe7631624b1ec6c3b13a3592e5843d221ee348bf43c4ef9ad65"
+ },
+ "external_data/dream4/insilico_size10_4_goldstandard.tsv": {
+  "bytes": 738,
+  "sha256": "ca7609d8c12a15eb88e8af0e6eb939234be4b41eebadbf48cf9b4196f5a2ab54"
+ },
+ "external_data/dream4/insilico_size10_4_timeseries.tsv": {
+  "bytes": 11183,
+  "sha256": "450f0c5814bad65a1abef347575002e45f8fef33685ace9d2a336ac4d4138dc0"
+ },
+ "external_data/dream4/insilico_size10_5_goldstandard.tsv": {
+  "bytes": 738,
+  "sha256": "c13d6a16a47f0ef8aa6c07cea7d5507e88833cfcfa7bd9e3603822d0b3169d3d"
+ },
+ "external_data/dream4/insilico_size10_5_timeseries.tsv": {
+  "bytes": 11183,
+  "sha256": "c7df51822da6cb075189b080e4a8b75081ba8f4b19f4628d89d3615a79d6b9fa"
+ }
+}
