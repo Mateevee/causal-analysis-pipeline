@@ -200,7 +200,8 @@ out.append("")
 #     past and the TRUE parents at the true lags, on the same standardized
 #     series. It is the error of someone who knows the graph: the part of the
 #     error of theta-hat that comes only from the sample size.
-# (b) tigramite SCMs (third-party generator, toys.structural_causal_process):
+# (b) tigramite SCMs (third-party generator, toys.structural_causal_process;
+#     the structural equations of each scenario were written for this work):
 #     Y_t = a*Y_{t-1} + c*f(X_{t-tau}) + noise, with f linear or nonlinear.
 #     The target of a partially linear model is the best linear approximation of
 #     the link; the reference is the coefficient of X_{t-tau} in the OLS of Y_t on

@@ -224,7 +224,17 @@ mv product/rivers_bavaria.p external_data/causal_rivers/
 ```
 
 The zip is ~570 MB and extracts into `product/`. Only the two Bavaria files
-are needed. You can also point `CAUSAL_RIVERS_DIR` at `product/`.
+are needed by the main runs. You can also point `CAUSAL_RIVERS_DIR` at `product/`.
+
+The first benchmark fixed after the code freeze
+(`revision/execution/r1_2c_causalrivers.py`) reads the East German split from
+the same zip (SHA-256 of `product.zip`:
+`4f779fa9222653af092046eacba39a955cc65638bfb70fb7e31a32d9d8373b55`):
+
+```
+mv product/rivers_ts_east_germany.csv external_data/causal_rivers/
+mv product/rivers_east_germany.p external_data/causal_rivers/
+```
 
 ### DREAM4 — `Data/dream4.py`
 
@@ -241,3 +251,49 @@ are needed. You can also point `CAUSAL_RIVERS_DIR` at `product/`.
 
 Only size 10 is loaded by default, so you need at least the 10 size-10
 files. Env var: `DREAM4_DIR`.
+
+## 4. Data of the analyses added in the revision (`revision/`)
+
+Besides CausalRivers (East Germany, above) and DREAM4 (above), the scripts of
+`revision/` read three more sources.
+
+### Causal Chambers, randomized interventions — `revision/offline/r1_4e_interventions.py`
+
+The interventions on the light source of the light tunnel, dataset
+`lt_interventions_standard_v1`, in `external_data/causal_chamber/`:
+
+```
+pip install causalchamber
+python -c "import causalchamber.datasets as d; d.Dataset('lt_interventions_standard_v1', root='./external_data/causal_chamber', download=True)"
+```
+
+(on a Windows console, set `PYTHONIOENCODING=utf-8` first).
+
+### TimeGraph — `revision/execution/r1_2c_third_party_readers.py`
+
+Second benchmark fixed after the code freeze. Repository
+`github.com/hferdous/TimeGraph`, commit `4d93403b002664fa55607f308ad0e80623472ded`
+(code MIT, data CC BY 4.0); the zip is about 1 GB, 1.7 GB extracted.
+
+```
+mkdir -p external_data/timegraph/extraido
+curl -L -o timegraph.zip https://codeload.github.com/hferdous/TimeGraph/zip/4d93403b002664fa55607f308ad0e80623472ded
+python -m zipfile -e timegraph.zip external_data/timegraph/extraido
+```
+
+SHA-256 of the zip: `964dc047a3b8bd8b027734c241cbe4d4fea949988123c2d7005208e8967ad4f7`.
+The reader expects `external_data/timegraph/extraido/TimeGraph-*/Datasets/`.
+
+### CausalDynamics, coupled systems — `revision/execution/r1_2c_third_party_readers.py`
+
+Second benchmark fixed after the code freeze. `huggingface.co/datasets/kausable/CausalDynamics`,
+revision `e42a6eebb4736f982be5332dbba91670b21e861e`, file `inputs/coupled.tar.gz` (MIT; about
+6.5 GB, 9.1 GB extracted; 14,096 `.nc` files). Reading them needs `h5py` (see `requirements.txt`).
+
+```
+curl -L -o coupled.tar.gz https://huggingface.co/datasets/kausable/CausalDynamics/resolve/e42a6eebb4736f982be5332dbba91670b21e861e/inputs/coupled.tar.gz
+python -c "import tarfile; tarfile.open('coupled.tar.gz').extractall('external_data/causaldynamics/extraido_coupled', filter='data')"
+```
+
+SHA-256 of the archive: `92e6a64b34a9908c2c9af5d8b5b753eb057afb7463e4650771ea21c90569f6c0`
+(equal to the official one).

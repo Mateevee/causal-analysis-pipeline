@@ -1,16 +1,19 @@
 # Causal discovery in multivariate time series: pipeline and benchmark
 
-This repository contains the code behind the paper *An Intelligent
-Multistage Pipeline for Causal Discovery and Effect Quantification in
-Multivariate Time Series*: the proposed pipeline (the Causal Analysis
-Pipeline, called `patch` in the code), the baselines it is compared with,
-the loaders for every benchmark dataset, and the scripts that run and score
-each experiment.
+This repository contains the code behind the paper *A Multistage Pipeline for
+Predictive Causal Discovery and Exploratory Effect Estimation in Multivariate
+Time Series*: the proposed pipeline (the Causal Analysis Pipeline, called
+`patch` in the code), the baselines it is compared with, the loaders for every
+benchmark dataset, the scripts that run and score each experiment, and the
+scripts and frozen protocols of the analyses added in the revision of the
+paper (`revision/`).
 
 Every result in the paper comes from a run of one of the entry points listed
-under [Reproducing the paper](#reproducing-the-paper). None of them takes
-command-line arguments: the settings are constants in `Config/` or in the
-"EXECUTION CONTROL" section of each script.
+under [Reproducing the paper](#reproducing-the-paper), or of a script in
+`revision/`. None of them takes command-line arguments: the settings are
+constants in `Config/` or in the "EXECUTION CONTROL" section of each script.
+The Supplementary Reproducibility Index of the paper maps every figure and
+table to the script and the run that produce it.
 
 ## Repository layout
 
@@ -25,6 +28,7 @@ command-line arguments: the settings are constants in `Config/` or in the
 | `Auxiliary/` | Post-hoc analyses that read an existing run (ranking metrics, majority vote, seed replication, summary tables). |
 | `generators/` | The scripts that write every number, table and figure of the paper from finished runs (see `generators/README.md`). |
 | `analysis/` | Follow-up analyses of the paper's results, each with its scripts, its results and a description (see `analysis/README.md`). |
+| `revision/` | The analyses added in the revision of the paper: the scripts that run them, the scripts that read stored outputs, and their protocols, frozen before each run (see `revision/README.md`). |
 | `main*.py`, `ablation_fusion.py` | Entry points (see below). |
 
 ## Installation
@@ -46,7 +50,40 @@ module is then not imported and the other models run normally.
 The pipeline runs its permutation tests in parallel, with up to 20 workers
 and 2 cores left free (`n_jobs` in `PIPELINE_CONFIG`, `Config/execution.py`).
 The random seeds are set inside each task, so the number of workers does not
-change the results.
+change the pipeline's results.
+
+## Reproduction settings
+
+Set the environment variable `PYTHONHASHSEED=0` before every run, in the shell
+that starts the script:
+
+```
+$env:PYTHONHASHSEED = "0"      # Windows PowerShell
+set PYTHONHASHSEED=0           # Windows cmd
+export PYTHONHASHSEED=0        # Linux / macOS
+```
+
+Part of the pipeline iterates over Python sets, whose order depends on the hash
+seed, so without this setting a rerun can differ from the published output on
+a few scenarios. Two baselines also depend on the environment: the output of
+DYNOTEARS and CUTS+ can change slightly with the number of numerical threads
+(Supplementary Table S29.5 of the paper).
+
+## The default configuration and the corrected variant
+
+By default the code runs the **default configuration**, the one evaluated
+throughout the paper. The **corrected variant** of the paper's Table VI changes
+two rules and is selected by two options of the pipeline, which can be added
+to `PIPELINE_CONFIG` in `Config/execution.py`:
+
+| Option | Default (evaluated) | Corrected variant |
+|---|---|---|
+| `time_axis_rule` | `'median_acf1'` | `'block_portmanteau'` (blockwise multivariate portmanteau test of the time axis) |
+| `evidence_coherence_overlap` | `'incoherent'` | `'coherent'` (weak but established agreement between the two evidence channels counts as coherent) |
+
+The paper recommends the corrected variant for new applications, particularly
+on large graphs or on series without autocorrelation of their own; it does not
+replace the default configuration in the paper's comparisons.
 
 ## Data
 
@@ -65,12 +102,13 @@ run.
 
 ## Reproducing the paper
 
-Run every script from the repository root.
+Run every script from the repository root, with the
+[reproduction settings](#reproduction-settings).
 
 | Script | What it runs | Output folder |
 |---|---|---|
-| `python main.py` | Main comparison on the development suite (the 51 scenarios marked D in Table 2 of the paper): the pipeline and every baseline at tau = 24 and tau = 10, on synthetic VAR, tigramite SCMs, Lorenz-96, logistic maps, CausalTime, ALARM and NetSim. | `Results/Run_<timestamp>/` |
-| `python main_heldout.py` | The same models and configuration on the held-out datasets (the 39 scenarios marked H in Table 2: Sachs, PeMS-BAY, Walker Circulation, PetShop, TEP, BEELINE, Causal Chambers, DREAM3, EasyVista, RCAEval). Reported apart from the development suite. | `Results_HeldOut/Run_<timestamp>/` |
+| `python main.py` | Main comparison on the development suite (the 51 scenarios marked D in Table II of the paper): the pipeline and every baseline at tau = 24 and tau = 10, on synthetic VAR, tigramite SCMs, Lorenz-96, logistic maps, CausalTime, ALARM and NetSim. | `Results/Run_<timestamp>/` |
+| `python main_heldout.py` | The same models and configuration on the held-out datasets (the 39 scenarios marked H in Table II: Sachs, PeMS-BAY, Walker Circulation, PetShop, TEP, BEELINE, Causal Chambers, DREAM3, EasyVista, RCAEval). Reported apart from the development suite. | `Results_HeldOut/Run_<timestamp>/` |
 | `python main_gpdc.py` | The non-linear baselines PCMCI-GPDC and PCMCI+-GPDC, on the 36 scenarios where they are feasible. Kept separate because GPDC is by far the slowest part. | `Results_GPDC/Run_<timestamp>/` |
 | `python main_ablation_patch.py` | Ablation of the pipeline: steps 1–6 add one component at a time, step 7 is the full pipeline, steps 8–10 remove one component each from it. | `Results_Ablation/` |
 | `python main_sensitivity.py` | Sensitivity of the pipeline to its own cut-offs (one at a time and Latin hypercube). Protocol in `Config/sensitivity.py`. Resumable. | `Results_Sensitivity/Run_<timestamp>/` |
@@ -90,7 +128,9 @@ The scripts below read a finished run and do not re-run any model:
 The numbers, tables and figures of the paper are written from finished runs by
 the scripts in [`generators/`](generators/README.md). They read the run of
 `main.py`, the run of `main_heldout.py` and the runs of the separate
-experiments from the origins set in `generators/origins.py`.
+experiments from the origins set in `generators/origins.py`. The analyses
+added in the revision (Supplementary Tables S28 to S45) are run and read by
+the scripts in [`revision/`](revision/README.md).
 
 To run a single scenario instead of the whole suite (for example, to check the
 installation or inspect the per-stage output), use
@@ -101,9 +141,10 @@ with 3 seeds and the models of `Config/execution.py`.
 
 All random seeds are fixed in the code: the scenario seeds are listed in
 `main.py` and `Config/execution.py`, and the pipeline's own seeds are literals
-in its modules. Re-running a script with the same package versions produces
-the same scenarios and the same decisions. `main_seed_replication.py` writes
-the git commit, the Python version and the full model configuration to
+in its modules. With the [reproduction settings](#reproduction-settings) and
+the same package versions, re-running a script produces the same scenarios
+and the same decisions of the pipeline. `main_seed_replication.py` writes the
+git commit, the Python version and the full model configuration to
 `run_config.txt`.
 
 ## Output of a run
@@ -156,4 +197,4 @@ If you use this code, please cite the paper (full reference to be added on
 publication):
 
 > Ferreira, M. M., de Souza, F. C., Pires, P. R. da M., Elerati, L. E. M., & Raposo, A. B.
-> *An Intelligent Multistage Pipeline for Causal Discovery and Effect Quantification in Multivariate Time Series*.
+> *A Multistage Pipeline for Predictive Causal Discovery and Exploratory Effect Estimation in Multivariate Time Series*.

@@ -79,9 +79,16 @@ def _load_network(network_dir: Path) -> pd.DataFrame:
     return pd.read_csv(path)
 
 
-def _load_run(run_dir: Path, max_cells: Optional[int]) -> tuple:
+def _load_run(run_dir: Path, max_cells: Optional[int], tie_seed: Optional[int] = None) -> tuple:
     """Reads ExpressionData.csv (genes x cells) + PseudoTime.csv of a run,
-    returns (data (T, n_genes) sorted by pseudotime, gene_names)."""
+    returns (data (T, n_genes) sorted by pseudotime, gene_names).
+
+    tie_seed=None (default): pandas' default sort, as in the paper. Most cells
+    share their pseudotime with other cells, and that sort is not stable, so
+    the order among tied cells (and which cells fall inside max_cells) depends
+    on the numpy/pandas build. tie_seed=<int>: tied cells are put in a random
+    order drawn with that seed (shuffle, then stable sort) -- used by the
+    tie-order sensitivity analysis of the IEEE Access revision."""
     df_expr = pd.read_csv(run_dir / "ExpressionData.csv", index_col=0)
     genes = list(df_expr.index)
 
@@ -89,7 +96,12 @@ def _load_run(run_dir: Path, max_cells: Optional[int]) -> tuple:
     if pt_path.exists():
         df_pt = pd.read_csv(pt_path, index_col=0)
         pseudotime = df_pt.mean(axis=1, skipna=True)
-        sorted_cells = pseudotime.reindex(df_expr.columns).sort_values().index
+        if tie_seed is None:
+            sorted_cells = pseudotime.reindex(df_expr.columns).sort_values().index
+        else:
+            perm = np.random.default_rng(tie_seed).permutation(len(df_expr.columns))
+            shuffled = pseudotime.reindex(df_expr.columns).iloc[perm]
+            sorted_cells = shuffled.sort_values(kind='mergesort').index
         sorted_cells = [c for c in sorted_cells if c in df_expr.columns]
     else:
         sorted_cells = list(df_expr.columns)
@@ -109,6 +121,7 @@ def generate_beeline_grn_benchmark_scenarios(
     max_cells: Optional[int] = 500,
     base_dir: Optional[str] = None,
     name_prefix: str = "benchmark_beeline",
+    tie_seed: Optional[int] = None,
 ) -> List[dict]:
     """
     Generates scenarios from the CURATED BEELINE networks (Pratapa et al.
@@ -130,6 +143,9 @@ def generate_beeline_grn_benchmark_scenarios(
                            BEELINE-data.zip (default: env BEELINE_DIR or
                            "./external_data/beeline_grn/BEELINE-data").
     name_prefix          : prefix of each generated scenario's name/folder.
+    tie_seed             : None (default) = the paper's ordering; an int puts
+                           cells with tied pseudotime in a random order
+                           (see _load_run).
 
     Returns a list of dicts (ScenarioEntry.to_dict()).
     """
@@ -155,7 +171,7 @@ def generate_beeline_grn_benchmark_scenarios(
             run_dirs = run_dirs[:max_runs_per_network]
 
         for run_dir in run_dirs:
-            data, genes = _load_run(run_dir, max_cells)
+            data, genes = _load_run(run_dir, max_cells, tie_seed)
             gene_idx = {g: i for i, g in enumerate(genes)}
             causal_pairs_idx = {
                 (gene_idx[r], gene_idx[a])

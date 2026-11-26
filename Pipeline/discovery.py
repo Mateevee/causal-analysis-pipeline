@@ -83,8 +83,12 @@ def filter_causal_candidates(
     correct_lag_multiplicity: bool = False,
     n_perms_lag_correction: Optional[int] = None,
     correct_lag_multiplicity_rescue: bool = False,
+    time_axis_rule: str = 'median_acf1',
 ) -> list:
     """
+    time_axis_rule : rule used by correct_lag_multiplicity_rescue='auto' to decide whether
+        the data has a time axis (see _detect_time_axis). Default = the original rule.
+
     xcorr_te_correction : 'none' | 'bonferroni' | 'fdr_bh' (default).
         Applied to the raw p-value of ALL pairs tested in Stage 3 and,
         separately, in Stage 4 (over the subset that survived the
@@ -161,7 +165,7 @@ def filter_causal_candidates(
         # only when the series have a genuine time axis (see
         # _detect_time_axis). True/False force the behavior.
         if correct_lag_multiplicity_rescue == 'auto':
-            _correct_rescue_lag = _detect_time_axis(processed)
+            _correct_rescue_lag = _detect_time_axis(processed, rule=time_axis_rule)
         else:
             _correct_rescue_lag = bool(correct_lag_multiplicity_rescue)
 
@@ -435,8 +439,113 @@ def _log_watch_stage4(watch_pairs, tasks_te, te_results_raw, candidates, min_te,
             print(f"             Reason: {reason_str}")
 
 
+TIME_AXIS_RULES = ('median_acf1', 'block_portmanteau')
+
+
+def _prewhiten_ar_bic(v: np.ndarray, p_max: int = 5) -> np.ndarray:
+    """Standardized residuals of an AR(p) fitted by least squares, p in {0..p_max} chosen by BIC.
+    Every order is fitted on the same sample (v[p_max:]), so the residuals of all series have length
+    len(v) - p_max."""
+    v = v - v.mean()
+    n = len(v)
+    best_bic, best_res = np.inf, v[p_max:]
+    for p in range(0, p_max + 1):
+        y = v[p_max:]
+        if p == 0:
+            res = y
+        else:
+            lags = np.column_stack([v[p_max - j:n - j] for j in range(1, p + 1)])
+            beta, *_ = np.linalg.lstsq(lags, y, rcond=None)
+            res = y - lags @ beta
+        bic = len(res) * np.log(np.mean(res ** 2) + 1e-300) + p * np.log(len(res))
+        if bic < best_bic:
+            best_bic, best_res = bic, res
+    return (best_res - best_res.mean()) / (best_res.std() + 1e-12)
+
+
+def _block_portmanteau_is_white(processed, m: int = 5, p_max: int = 5, q: float = 0.05):
+    """
+    Multivariate white-noise check, block by block (the d^2 blocks of the Hosking 1980 portmanteau,
+    each tested on its own; see revision/PROTOCOL_time_axis_rule.md, section 3):
+      - diagonal (series i with itself): Ljung-Box on the standardized series,
+        Q_ii = n(n+2) sum_{k=1..m} r_ii(k)^2/(n-k) ~ chi2(m);
+      - off-diagonal (ordered pair i -> j): Haugh (1976) residual cross-correlation test on
+        AR(p)-prewhitened residuals (p <= p_max by BIC), Q_ij = n_r sum_{k=1..m} r_ij(k)^2 ~ chi2(m),
+        r_ij(k) = corr(residual_i[t-k], residual_j[t]);
+      - one Benjamini-Hochberg family over the d^2 p-values, level q.
+    Series: those with >= 30 non-missing values and positive spread (the same set the median rule
+    uses); NaN left by Stage 2 are linearly interpolated for this test only.
+
+    Returns (is_white, info). is_white is None when there are no usable series.
+    """
+    from scipy.stats import chi2
+    from statsmodels.stats.multitest import multipletests
+
+    cols = []
+    for series in processed.values():
+        v = np.asarray(series, dtype=float)
+        if (~np.isnan(v)).sum() < 30 or np.nanstd(v) <= 1e-12:
+            continue
+        cols.append(v)
+    if not cols:
+        return None, {'d': 0}
+    W = pd.DataFrame(np.column_stack(cols)).interpolate(limit_direction='both')
+    X = W.to_numpy(float)
+    X = (X - X.mean(axis=0)) / (X.std(axis=0) + 1e-12)
+    n, d = X.shape
+
+    # diagonal: Ljung-Box
+    Z = X - X.mean(axis=0)
+    den = (Z ** 2).sum(axis=0)
+    q_diag = np.zeros(d)
+    for k in range(1, m + 1):
+        rk = (Z[:-k] * Z[k:]).sum(axis=0) / den
+        q_diag += n * (n + 2) * rk ** 2 / (n - k)
+    p_diag = chi2.sf(q_diag, m)
+
+    # off-diagonal: Haugh on prewhitened residuals
+    R = np.column_stack([_prewhiten_ar_bic(X[:, j], p_max) for j in range(d)])
+    nr = R.shape[0]
+    q_off = np.zeros((d, d))
+    for k in range(1, m + 1):
+        ck = R[:-k].T @ R[k:] / nr          # (i, j): i at t-k, j at t
+        q_off += nr * ck ** 2
+    p_off = chi2.sf(q_off[~np.eye(d, dtype=bool)], m)
+
+    reject = multipletests(np.concatenate([p_diag, p_off]), alpha=q, method='fdr_bh')[0]
+    info = {'d': d, 'n': n, 'series_rejecting': int(reject[:d].sum()),
+            'pairs_rejecting': int(reject[d:].sum())}
+    return (not bool(reject.any())), info
+
+
 def _detect_time_axis(processed, alpha_white_noise: float = 2.0,
-                       verbose: bool = True) -> bool:
+                       verbose: bool = True, rule: str = 'median_acf1') -> bool:
+    """
+    rule='median_acf1' (default, the rule of the original paper) is described below.
+    rule='block_portmanteau': no time axis only when no series depends on its own past and no
+    series depends on the past of another (_block_portmanteau_is_white; revision of the IEEE
+    Access manuscript, revision/PROTOCOL_time_axis_rule.md).
+
+    """
+    if rule not in TIME_AXIS_RULES:
+        raise ValueError(f"time axis rule must be one of {TIME_AXIS_RULES}, got {rule!r}")
+    if rule == 'block_portmanteau':
+        is_white, info = _block_portmanteau_is_white(processed)
+        if is_white is None:
+            if verbose:
+                print("  [time axis] not enough series to decide -> assuming temporal")
+            return True
+        if verbose:
+            print(f"  [time axis] block portmanteau (m=5, BH q=0.05) over {info['d']} series "
+                  f"(n={info['n']}): {info['series_rejecting']} series and {info['pairs_rejecting']} "
+                  f"ordered pairs reject white noise -> "
+                  f"{'i.i.d. (no time axis)' if is_white else 'TEMPORAL'}")
+        return not is_white
+    return _detect_time_axis_median(processed, alpha_white_noise, verbose)
+
+
+def _detect_time_axis_median(processed, alpha_white_noise: float = 2.0,
+                              verbose: bool = True) -> bool:
     """
     Decides, using ONLY the data (no ground truth and no dataset name),
     whether the series have genuine temporal structure -- that is,

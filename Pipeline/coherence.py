@@ -114,8 +114,15 @@ def assess_evidence_coherence(
     alpha: float = 0.05,
     min_pairs: int = 10,
     verbose: bool = True,
+    overlap: str = 'incoherent',
 ) -> dict:
     """
+    overlap : regime when BOTH conditions hold (lower bound > 0 and upper bound < min_rho:
+        agreement established but weaker than medium). 'incoherent' (default, the
+        original rule) or 'coherent' (variant G1 of the IEEE Access revision,
+        revision/PROTOCOL_coherence_guard.md: the guard acts only when agreement
+        between the two channels is not established).
+
     Returns {'regime': 'coherent' | 'incoherent' | 'undetermined',
              'rho', 'rho_lower', 'rho_upper': float (NaN when not
              computable), 'n': int, 'reason': str}.
@@ -159,7 +166,13 @@ def assess_evidence_coherence(
     lower, upper = float(np.tanh(z - half)), float(np.tanh(z + half))
     out['rho_lower'], out['rho_upper'] = lower, upper
 
-    if upper < min_rho:
+    if overlap not in ('incoherent', 'coherent'):
+        raise ValueError("overlap must be 'incoherent' or 'coherent'")
+    if upper < min_rho and lower > 0 and overlap == 'coherent':
+        out['regime'] = 'coherent'
+        out['reason'] = (f'transfer entropy and DML |t| agree on the ranking, weakly '
+                         f'([{lower:+.2f}, {upper:+.2f}] above 0, below {min_rho})')
+    elif upper < min_rho:
         out['regime'] = 'incoherent'
         out['reason'] = (f'transfer entropy and DML |t| do not agree on the ranking '
                          f'(upper bound {upper:+.2f} < {min_rho})')

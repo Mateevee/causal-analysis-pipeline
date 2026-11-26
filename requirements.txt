@@ -20,9 +20,14 @@ torch==2.11.0          # CUTS+; also converts the DREAM3 .pt files once
 # --- Paper generators (generators/) -----------------------------------------
 matplotlib==3.9.2   # figures of the paper
 
+# --- Revision analyses (revision/) ----------------------------------------
+networkx==3.6.1        # Data/causal_rivers.py (first benchmark fixed after the code freeze)
+h5py==3.11.0           # readers of the second benchmark (CausalDynamics .nc files)
+causal-learn==0.1.4.8  # PC-stable on ALARM and Sachs (revision/execution/r1_m6a_pc.py)
+
 # --- Optional ----------------------------------------------------------------
 # Only needed by loaders that no entry point uses by default. Uncomment if
 # you use them.
 # causalchamber==0.2.8 # alternative way to download the Causal Chambers data
 # openpyxl==3.1.5      # Data/nino_barents_kara.py
-# networkx==3.6.1      # Data/causal_rivers.py
+# (networkx: see the revision analyses below)

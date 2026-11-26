@@ -352,19 +352,21 @@ def discover_contemporaneous(
     return links
 
 
-def drop_lagged_without_time_axis(results: pd.DataFrame, processed: dict) -> tuple:
+def drop_lagged_without_time_axis(results: pd.DataFrame, processed: dict,
+                                  rule: str = 'median_acf1') -> tuple:
     """
     Without a genuine time axis (i.i.d. rows -- e.g. data sampled row by row
     from a Bayesian network) no lag is real: every lagged edge is an artefact
     of row order. They are dropped here, and the contemporaneous step then
     describes the whole graph. Decided from the data only
     (discovery._detect_time_axis: median |ACF(1)| against the white-noise
-    band).
+    band; rule='block_portmanteau' uses the block portmanteau check instead,
+    see discovery._detect_time_axis).
 
     Returns (results, number of edges dropped -- None when the data has a
     time axis and nothing was touched).
     """
-    if _detect_time_axis(processed):
+    if _detect_time_axis(processed, rule=rule):
         return results, None
     sig_mask = results['significant'] == True  # noqa: E712
     n_drop = int(sig_mask.sum())
